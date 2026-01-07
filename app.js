@@ -48,7 +48,7 @@ function renderItem(item) {
   info.className = "info";
   info.innerHTML = `
     <div class="name">${item.name}</div>
-    <div class="price">${Number(item.price).toLocaleString()} so‘m</div>
+    <div class="price">${Number(item.price.currentPrice).toLocaleString()} so‘m</div>
   `;
 
   const controls = document.createElement("div");
@@ -91,7 +91,7 @@ function changeQty(item, delta, qtyEl) {
 function updateTotal() {
   let sum = 0;
   Object.values(cart).forEach(e => {
-    sum += Number(e.item.price) * e.qty;
+    sum += Number(e.item.price.currentPrice) * e.qty;
   });
   totalEl.textContent = sum.toLocaleString() + " so‘m";
 }
@@ -113,6 +113,7 @@ orderBtn.onclick = () => {
   tg.sendData(JSON.stringify({ order }));
   tg.close();
 };
+
 
 
 
