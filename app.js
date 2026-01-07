@@ -108,7 +108,7 @@ orderBtn.onclick = () => {
   const order = Object.values(cart).map(e => ({
     id: e.item.id,
     name: e.item.name,
-    price: e.item.price,
+    price: e.item.price.currentPrice,
     qty: e.qty
   }));
 
@@ -120,6 +120,7 @@ orderBtn.onclick = () => {
   tg.sendData(JSON.stringify({ order }));
   tg.close();
 };
+
 
 
 
