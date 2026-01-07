@@ -1,7 +1,7 @@
 const tg = window.Telegram.WebApp;
 tg.ready();
 
-const API_URL = "https://raviosta-backend.onrender.com"; // 🔴 PROD’da domeningizni yozing
+const API_URL = "https://raviosta-backend.onrender.com/api/menu"; // 🔴 PROD’da domeningizni yozing
 const menuEl = document.getElementById("menu");
 const totalEl = document.getElementById("total");
 const orderBtn = document.getElementById("orderBtn");
@@ -113,3 +113,4 @@ orderBtn.onclick = () => {
   tg.sendData(JSON.stringify({ order }));
   tg.close();
 };
+
