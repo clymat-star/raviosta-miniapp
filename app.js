@@ -74,7 +74,7 @@ function renderItem(item) {
   plus.onclick = () => changeQty(item, +1, qty);
 
   controls.append(minus, qty, plus);
-  div.append(info, controls);
+  div.append(img, info, controls);
 
   return div;
 }
@@ -120,6 +120,7 @@ orderBtn.onclick = () => {
   tg.sendData(JSON.stringify({ order }));
   tg.close();
 };
+
 
 
 
