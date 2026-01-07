@@ -44,6 +44,13 @@ function renderItem(item) {
   const div = document.createElement("div");
   div.className = "item";
 
+  const img = document.createElement("img");
+  img.src = item.image || "https://via.placeholder.com/80";
+  img.className = "item-img";
+  img.onerror = () => {
+    img.src = "https://via.placeholder.com/80";
+  };
+
   const info = document.createElement("div");
   info.className = "info";
   info.innerHTML = `
@@ -113,6 +120,7 @@ orderBtn.onclick = () => {
   tg.sendData(JSON.stringify({ order }));
   tg.close();
 };
+
 
 
 
